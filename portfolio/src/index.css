@@ -2,22 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Si luego decides usar Eurostile desde /public/fonts, descomenta y ajusta rutas:
-
+/* Si quieres declarar @font-face para Eurostile, añade aquí: */
+/* 
 @font-face {
   font-family: "Eurostile";
   src: url("/fonts/Eurostile.woff2") format("woff2"),
        url("/fonts/Eurostile.woff") format("woff");
   font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Eurostile";
-  src: url("/fonts/Eurostile-Bold.woff2") format("woff2"),
-       url("/fonts/Eurostile-Bold.woff") format("woff");
-  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
