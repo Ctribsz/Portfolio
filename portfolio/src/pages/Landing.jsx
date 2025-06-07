@@ -34,10 +34,10 @@ export default function Landing({ scrollToSection }) {
       </div>
 
       {/* B) Capa de contenido - MODIFICADO */}
-      <div className="relative z-20 h-full flex justify-between items-center w-full px-0">
+      <div className="relative z-20 h-full flex justify-between items-center w-full px-0 font-eurostile">
         {/* 1) Contenedor del Retrato - MODIFICADO */}
         <div className="flex-shrink-0 justify-s">
-          <div className="w-64 h-80 overflow-hidden ml-4">
+          <div className="w-104 h-120 overflow-hidden ml-0">
             <img
               src={portrait}
               alt="Developer Portrait"
@@ -50,37 +50,36 @@ export default function Landing({ scrollToSection }) {
           </div>
         </div>
 
-
-        {/* Sección del nombre, centrado con Flex, tonos blanco/gris */}
+        {/* 2) Sección del nombre con glow blanco */}
         <div className="relative w-full h-full flex flex-col items-center justify-center px-0">
-          {/** Glow blanco pulsatil más pronunciado */}
+          {/** 1) Glow pulsátil (blanco difuso) */}
           <h1
             className="
-              absolute 
-              text-9xl                 /* Más grande */
-              font-bold 
-              font-helvetica 
-              uppercase 
-              text-white               /* Glow en blanco */
-              opacity-20 
+              absolute
+              text-4xl
+              font-bold
+              font-helvetica
+              uppercase
+              text-white
+              opacity-20
               animate-pulse
             "
             style={{
-              filter: "blur(6px)",     /* Glow más difuso */
+              filter: "blur(6px)",
               whiteSpace: "nowrap",
             }}
           >
             C H R I S T I A N&nbsp;&nbsp;E C H E V E R R I A
           </h1>
 
-          {/** Texto principal blanco, enorme, con drop-shadow fuerte */}
+          {/** 2) Texto principal (blanco puro + drop-shadow) */}
           <h1
             className="
               relative
-              text-9xl 
-              uppercase 
+              text-4xl
+              uppercase
               text-white
-              drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]  /* Sombra blanca */
+              drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]
               mb-2
             "
             style={{
@@ -90,23 +89,13 @@ export default function Landing({ scrollToSection }) {
             C H R I S T I A N&nbsp;&nbsp;E C H E V E R R I A
           </h1>
 
-          {/** Subtítulo con cursor, ajustamos un poco el color */}
+          {/** 3) Subtítulo con cursor animado */}
           <p className="text-2xl font-light font-mono text-white/90 flex items-center">
-            <span className="inline-block animate-pulse mr-2">{'>'}</span>
+            <span className="inline-block animate-pulse mr-2">{">"}</span>
             <span>Frontend Developer</span>
             <span className="inline-block animate-ping ml-2 w-2 h-5 bg-white/80"></span>
           </p>
-
-          {/** Líneas de escaneo, opcional */}
-          <div 
-            className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent"
-            style={{
-              backgroundSize: "100% 4px",
-              animation: "scan 2s linear infinite"
-            }}
-          />
         </div>
-
 
         {/* 3) Menú estilo cyberpunk futurista */}
         <div className="flex-shrink-0 relative">

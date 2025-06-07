@@ -8,8 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        helvetica: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
-        eurostile: ["Eurostile", "Arial", "sans-serif"]
+        sans: ["Eurostile","Helvetica Neue","Arial","sans-serif"],
       },
       colors: {
         primaryBg: "#EDE4E0",
