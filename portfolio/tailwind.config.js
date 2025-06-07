@@ -14,7 +14,7 @@ export default {
       colors: {
         primaryBg: "#EDE4E0",
         primaryText: "#262627",
-        accent: "#BD9977"     // <— definimos accent = #BD9977
+        accent: "#BD9977"
       }
     }
   },

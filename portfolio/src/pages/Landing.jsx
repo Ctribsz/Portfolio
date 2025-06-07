@@ -5,99 +5,223 @@ import Dither from "../components/Dither";
 
 export default function Landing({ scrollToSection }) {
   const containerRef = useRef(null);
-
+  
   return (
     <section
       ref={containerRef}
       id="landing"
       className="
-        relative       /* Para anclar los children absolute */
-        h-screen       /* EXACTAMENTE 100vh, sin min-h ni nada */
-        bg-accent      /* #BD9977 */
-        overflow-hidden/* Evita scroll horizontal/vertical extra */
+        relative
+        w-screen
+        h-screen
+        bg-accent
+        overflow-hidden
       "
     >
-      {/** 
-       * A) Fondo Dither: debe cubrir 100 % ancho y alto del <section> 
-       *    y estar en z-0 para que quede detrás.
-       */}
+      {/* A) Fondo Dither */}
       <div className="absolute inset-0 z-0 w-full h-full">
         <Dither
           waveColor={[0.741, 0.600, 0.467]}
           waveSpeed={0.05}
           waveFrequency={3}
           waveAmplitude={0.3}
-          colorNum={4}
+          colorNum={5}
           pixelSize={2}
           disableAnimation={false}
           enableMouseInteraction={true}
-          mouseRadius={0.3}
+          mouseRadius={0.5}
         />
       </div>
 
-      {/**
-       * B) Contenido por delante: relative z-20 para que siempre quede encima 
-       *    y w-full h-full para ocupar exactamente la misma área que el canvas.
-       */}
-      <div className="relative z-20 w-full h-full flex items-center px-0">
-        {/* 1) Columna izquierda: retrato sin padding extra */}
-        <div className="w-1/4 flex justify-start">
-          <div className="relative w-64 h-80 rounded-lg overflow-hidden shadow-lg">
+      {/* B) Capa de contenido - MODIFICADO */}
+      <div className="relative z-20 h-full flex justify-between items-center w-full px-0">
+        {/* 1) Contenedor del Retrato - MODIFICADO */}
+        <div className="flex-shrink-0 justify-s">
+          <div className="w-64 h-80 overflow-hidden ml-4">
             <img
               src={portrait}
               alt="Developer Portrait"
-              className="object-cover object-left w-full h-full"
+              className="object-cover w-128 h-full -translate-x-1/2 transform"
               style={{
-                filter: "contrast(1.1) saturate(1.2)",
-                clipPath: "polygon(0 0, 60% 0, 60% 100%, 0 100%)"
+                filter: "contrast(1.2) saturate(1.2)",
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
               }}
-            />
-            <div
-              className="absolute inset-0 bg-gradient-to-b from-transparent via-[#262627]/10 to-transparent bg-repeat-y animate-pulse"
-              style={{ backgroundSize: "100% 4px" }}
             />
           </div>
         </div>
 
-        {/* 2) Columna central: nombre y subtítulo, centrados */}
-        <div className="flex-1 flex flex-col items-center justify-center text-center">
-          <h1 className="text-6xl font-thin font-helvetica text-[#262627] tracking-wide mb-2">
-            JANE <span className="font-bold text-[#EDE4E0]">DOE</span>
+
+        {/* Sección del nombre, centrado con Flex, tonos blanco/gris */}
+        <div className="relative w-full h-full flex flex-col items-center justify-center px-0">
+          {/** Glow blanco pulsatil más pronunciado */}
+          <h1
+            className="
+              absolute 
+              text-9xl                 /* Más grande */
+              font-bold 
+              font-helvetica 
+              uppercase 
+              text-white               /* Glow en blanco */
+              opacity-20 
+              animate-pulse
+            "
+            style={{
+              filter: "blur(6px)",     /* Glow más difuso */
+              whiteSpace: "nowrap",
+            }}
+          >
+            C H R I S T I A N&nbsp;&nbsp;E C H E V E R R I A
           </h1>
-          <p className="text-2xl text-[#262627]/70 font-light">Web Developer</p>
+
+          {/** Texto principal blanco, enorme, con drop-shadow fuerte */}
+          <h1
+            className="
+              relative
+              text-9xl 
+              uppercase 
+              text-white
+              drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]  /* Sombra blanca */
+              mb-2
+            "
+            style={{
+              whiteSpace: "nowrap",
+            }}
+          >
+            C H R I S T I A N&nbsp;&nbsp;E C H E V E R R I A
+          </h1>
+
+          {/** Subtítulo con cursor, ajustamos un poco el color */}
+          <p className="text-2xl font-light font-mono text-white/90 flex items-center">
+            <span className="inline-block animate-pulse mr-2">{'>'}</span>
+            <span>Frontend Developer</span>
+            <span className="inline-block animate-ping ml-2 w-2 h-5 bg-white/80"></span>
+          </p>
+
+          {/** Líneas de escaneo, opcional */}
+          <div 
+            className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent"
+            style={{
+              backgroundSize: "100% 4px",
+              animation: "scan 2s linear infinite"
+            }}
+          />
         </div>
 
-        {/* 3) Columna derecha: menú, sin padding extra */}
-        <div className="w-1/4 flex justify-end">
-          <nav className="space-y-6 mr-4">
-            {["PROJECTS", "EXPERIENCE", "SKILLS", "ABOUT ME", "CONTACT ME"].map((item) => {
-              const targetId = item.toLowerCase().replace(" ", "-");
-              return (
+
+        {/* 3) Menú estilo cyberpunk futurista */}
+        <div className="flex-shrink-0 relative">
+        {/* Efecto de circuito en el fondo */}
+        <div className="absolute -inset-4 opacity-30">
+            <svg width="100%" height="100%" viewBox="0 0 200 300">
+            <defs>
+                <pattern id="circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M0 10h20M10 0v20" stroke="#BD9977" strokeWidth="0.5" opacity="0.5" />
+                <circle cx="10" cy="10" r="1" fill="#BD9977" opacity="0.7" />
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#circuit)" />
+            
+            {/* Líneas de conexión animadas */}
+            <path 
+                d="M20 50 L180 50 L180 250 L20 250" 
+                stroke="#BD9977" 
+                strokeWidth="1" 
+                fill="none" 
+                opacity="0.6"
+                className="animate-pulse"
+            />
+            </svg>
+        </div>
+        
+        <nav className="
+            relative
+            flex 
+            flex-col 
+            items-center 
+            space-y-4 
+            bg-gradient-to-b 
+            from-black/80 
+            via-[#262627]/90 
+            to-black/80
+            backdrop-blur-lg 
+            p-6 
+            mr-4
+            border
+            border-[#BD9977]/30
+            shadow-2xl
+        "
+        style={{
+            clipPath: "polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))",
+            boxShadow: "0 0 20px rgba(189, 153, 119, 0.3), inset 0 0 20px rgba(189, 153, 119, 0.1)"
+        }}>
+            
+            {/* Indicador de estado */}
+            <div className="flex items-center space-x-2 mb-4">
+            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <span className="text-xs text-[#BD9977] font-mono">ONLINE</span>
+            </div>
+            
+            {["PROJECTS", "EXPERIENCE", "SKILLS", "ABOUT ME", "CONTACT ME"].map((item, index) => {
+            const targetId = item.toLowerCase().replace(" ", "-");
+            return (
+                <div key={item} className="relative w-full group">
+                {/* Línea de conexión lateral */}
+                <div className="absolute -left-3 top-1/2 w-2 h-px bg-[#BD9977]/50 group-hover:bg-[#BD9977] transition-colors duration-300"></div>
+                
                 <button
-                  key={item}
-                  onClick={() => scrollToSection(targetId)}
-                  className="
-                    block
-                    text-[#262627]
-                    text-lg
+                    onClick={() => scrollToSection(targetId)}
+                    className="
+                    relative
+                    w-full
+                    uppercase
+                    text-[#EDE4E0]
+                    text-sm
                     font-light
-                    font-eurostile
+                    font-mono
                     tracking-[0.15em]
-                    hover:text-[#EDE4E0]
+                    py-3
                     px-4
-                    py-2
                     transition-all
                     duration-300
+                    hover:text-[#BD9977]
+                    hover:bg-[#BD9977]/10
                     border-l-2
                     border-transparent
-                    hover:border-[#EDE4E0]
-                  "
+                    hover:border-[#BD9977]
+                    group
+                    "
+                    style={{
+                    textShadow: "0 0 10px rgba(189, 153, 119, 0.5)"
+                    }}
                 >
-                  {item}
+                    {/* Efecto de hover con líneas */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#BD9977]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Número de índice */}
+                    <span className="absolute -left-8 top-1/2 transform -translate-y-1/2 text-xs text-[#BD9977]/60 font-mono">
+                    {String(index + 1).padStart(2, '0')}
+                    </span>
+                    
+                    {/* Texto del menú */}
+                    <span className="relative z-10">{item}</span>
+                    
+                    {/* Indicador de flecha */}
+                    <span className="absolute right-2 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[#BD9977]">
+                    →
+                    </span>
                 </button>
-              );
+                </div>
+            );
             })}
-          </nav>
+            
+            {/* Barra de progreso decorativa */}
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-[#BD9977] to-transparent mt-4"></div>
+            
+            {/* Timestamp futurista */}
+            <div className="text-xs text-[#BD9977]/60 font-mono mt-2">
+            {new Date().toLocaleTimeString('en-US', { hour12: false })}
+            </div>
+        </nav>
         </div>
       </div>
     </section>
