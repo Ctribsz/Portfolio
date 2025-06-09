@@ -1,4 +1,3 @@
-// src/pages/Landing.jsx
 import React, { useRef } from "react";
 import portrait from "../assets/portrait-glitch.png";
 import Dither from "../components/Dither";
@@ -213,6 +212,19 @@ export default function Landing({ scrollToSection }) {
         </nav>
         </div>
       </div>
+
+        
+      <div
+        className="
+          absolute
+          bottom-0 left-0 inset-x-0
+          h-32
+          bg-gradient-to-b
+          from-transparent
+          to-primaryBg
+          pointer-events-none
+        "
+      />
     </section>
   );
 }

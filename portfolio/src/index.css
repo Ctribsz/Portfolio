@@ -12,3 +12,13 @@ html, body { margin:0; padding:0; width:100%; height:100%; }
     font-style: normal;
     font-display: swap;
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-image: none !important;
+  color: #BD9977 !important;
+}
+.swiper-button-prev svg,
+.swiper-button-next svg {
+  stroke: #BD9977 !important;
+}

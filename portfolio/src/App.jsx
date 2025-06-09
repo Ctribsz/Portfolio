@@ -1,5 +1,7 @@
 import React from "react";
 import Landing from "./pages/Landing";
+import ProjectsSection from "./pages/ProjectSection";
+import ExperienceSection from "./pages/ExperienceSection";
 
 function App() {
   const scrollToSection = (sectionId) => {
@@ -12,7 +14,8 @@ function App() {
   return (
     <div>
       <Landing scrollToSection={scrollToSection} />
-
+      <ProjectsSection />
+      <ExperienceSection />
     </div>
   );
 }
