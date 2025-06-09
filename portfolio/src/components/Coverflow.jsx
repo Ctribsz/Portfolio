@@ -119,6 +119,16 @@ export default function ProjectsCoverflow({ projects }) {
           </div>
         </div>
       )}
+
+      {/* BOTÓN DE DEMO */}
+      <a
+        href={projects[activeIndex].demoUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block mt-4 px-5 py-2 bg-accent text-white font-medium rounded-lg shadow hover:bg-accent/80 transition"
+      >
+        Ver Demo
+      </a>
     </div>
   );
 }

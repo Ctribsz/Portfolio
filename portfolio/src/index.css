@@ -22,3 +22,26 @@ html, body { margin:0; padding:0; width:100%; height:100%; }
 .swiper-button-next svg {
   stroke: #BD9977 !important;
 }
+
+@keyframes scan {
+  0% { 
+    opacity: 0.3;
+    transform: scaleY(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: scaleY(1.5);
+  }
+  100% { 
+    opacity: 0.3;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}

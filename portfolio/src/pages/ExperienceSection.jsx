@@ -35,16 +35,13 @@ export default function ExperienceSection() {
               {/* Tarjeta, con z-0 para que quede debajo de la esquina */}
               <div className="bg-primaryBg p-8 rounded-lg relative z-0">
                 <h3 className="text-xl font-bold text-primaryText mb-2">
-                  Senior Frontend Developer
+                  Web Developer
                 </h3>
                 <p className="text-sm font-light text-accent mb-4">
-                  TechCorp Inc. • 2022–2024 • Remote
+                  UVG-Deportes • 2023–2025 • Remote
                 </p>
                 <p className="text-primaryText font-light leading-relaxed">
-                  Led development of responsive web applications with React and
-                  Next.js. Collaborated closely with design teams to build
-                  pixel-perfect UI components, optimized performance (40% faster
-                  load times) and mentored junior engineers.
+                Como Web Developer lideré el rediseño y la implementación completa de la plataforma UVG-Deportes usando React, Node.js y Tailwind CSS. Reemplacé el sistema manual de registro de torneos por una solución interactiva con actualizaciones en tiempo real, reduciendo el trabajo administrativo un 50 % y aumentando el engagement estudiantil. Colaboré estrechamente con diseñadores y responsables de la universidad para garantizar una interfaz responsiva, accesible y fácil de usar.
                 </p>
               </div>
             </div>
@@ -70,19 +67,20 @@ export default function ExperienceSection() {
 
             <div className="bg-primaryBg p-8 rounded-lg relative z-0 text-right">
                 <h3 className="text-xl font-bold text-primaryText mb-2">
-                    Full Stack Developer
+                  Full Stack & AI Solutions Engineer
                 </h3>
                 <p className="text-sm font-light text-accent mb-4">
-                    StartupXYZ • 2020–2022 • San Francisco
+                    Fluentum • 2025 – 
                 </p>
                 <p className="text-primaryText font-light leading-relaxed">
-                    Designed and built MERN-stack applications, crafted RESTful APIs and database schemas, and integrated third-party services and payment systems. Participated in agile workflows and drove code reviews.
+                  En Fluentum desarrollo soluciones de inteligencia artificial y chatbots conversacionales para automatizar procesos empresariales. Creo agentes inteligentes en Node.js y Python, entreno modelos de NLP y diseño APIs RESTful para la ingesta y procesamiento de grandes volúmenes de datos. Además, construyo dashboards interactivos en React que permiten visualizar insights de IA en tiempo real y colaboro con DevOps para desplegar estos servicios en Kubernetes.
                 </p>
             </div>
             </div>
           </div>
         </div>
       </div>
+
     </section>
   );
 }
