@@ -73,7 +73,7 @@ export default function ExperienceSection() {
                     Fluentum • 2025 – 
                 </p>
                 <p className="text-primaryText font-light leading-relaxed">
-                  En Fluentum desarrollo soluciones de inteligencia artificial y chatbots conversacionales para automatizar procesos empresariales. Creo agentes inteligentes en Node.js y Python, entreno modelos de NLP y diseño APIs RESTful para la ingesta y procesamiento de grandes volúmenes de datos. Además, construyo dashboards interactivos en React que permiten visualizar insights de IA en tiempo real y colaboro con DevOps para desplegar estos servicios en Kubernetes.
+                  En Fluentum desarrollo soluciones de inteligencia artificial y chatbots conversacionales para automatizar procesos empresariales. Creo agentes inteligentes en Node.js y Python, entreno modelos de NLP y diseño APIs RESTful para la ingesta y procesamiento de grandes volúmenes de datos. Además, construyo dashboards interactivos en React que permiten visualizar insights de IA en tiempo real.
                 </p>
             </div>
             </div>
