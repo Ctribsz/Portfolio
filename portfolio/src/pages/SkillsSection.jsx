@@ -10,13 +10,13 @@ const skillGroups = {
     "Node.js", "Laravel", "Neo4j", "MongoDB"
   ],
   "Tooling": [
-    "Git", "Docker", "Jest", "Figma"
+    "Git", "Docker", "Postman", "Figma"
   ]
 };
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-16 bg-primaryBg">
+    <section id="skills" className="py-16 bg-primaryBg px-4 sm:px-6 md:px-8">
       <h2 className="text-3xl font-bold text-center mb-12">Skills</h2>
 
       <div className="max-w-5xl mx-auto space-y-12">

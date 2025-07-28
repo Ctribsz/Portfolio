@@ -66,8 +66,7 @@ export default function AboutMe() {
               <img src={thorneImg || "/placeholder.svg"} alt="espinas" className="w-full object-contain" />
             </div>
             <p className="text-base md:text-lg lg:text-xl text-primaryText/90 leading-relaxed font-light">
-              I'm a passionate web developer with over 4 years of experience creating digital experiences that blend cutting-edge technology with intuitive design. I specialize in React, Next.js, and modern JavaScript frameworks, always staying ahead of the curve in this rapidly evolving field.
-            </p>
+              Soy un desarrollador web apasionado con más de 2 años de experiencia creando experiencias digitales que combinan tecnología de vanguardia con un diseño intuitivo. Me especializo en React, Node.js y Frameworks modernos de JavaScript, manteniéndome siempre a la vanguardia en este campo en rápida evolución. </p>
           </div>
 
           {/* Ojo Inferior/Derecho */}
